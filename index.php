@@ -1,6 +1,16 @@
 <?php
+session_start();
 
-//this can be something close to a routing system
-header('Location: controllers/index.php');
+/*
+ * Classes autoloading
+ */
+spl_autoload_register(function($class)
+{
+  if (file_exists('./model/' . $class . '.php'))
+    require_once './model/' . $class . '.php';
+  elseif (file_exists('./entities/' . $class . '.php'))
+    require_once './entities/' . $class . '.php';
+});
 
- ?>
+$router = new Router($_GET['page'] ?? null);
+$router->callController();
