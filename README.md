@@ -10,5 +10,7 @@ A vehicle management app programmed in OOP with architecture MVC
 ### MySQL
 Before running app you need to edit **./conf/database.conf.php** to setup MySQL connection.
 
+Import *./week19.sql*
+
 ### Router
 If adding new feature(s) with new controller(s), edit **./conf/router.conf.php** to add path(s).
