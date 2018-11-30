@@ -27,14 +27,14 @@ if(isset($_POST['add-vehicle']))
   {
     $vehicle_manager->addVehicle($vehicle);
   }
-  $_POST = [];
+  header('Location: ./');
 }
 
 if(isset($_POST['delete-vehicle']))
 {
   $vehicle = $vehicle_manager->getVehicle($_POST['id']);
   $vehicle_manager->deleteVehicle($vehicle);
-  $_POST = [];
+  header('Location: ./');
 }
 
 if(isset($_POST['edit-vehicle']))
@@ -42,7 +42,7 @@ if(isset($_POST['edit-vehicle']))
   $vehicle = $vehicle_manager->getVehicle($_POST['id']);
   $vehicle->setColor($_POST['vehicle-color']);
   $vehicle_manager->updateVehicle($vehicle);
-  $_POST = [];
+  header('Location: ./');
 }
 
 $vehicles = $vehicle_manager->getVehicles();

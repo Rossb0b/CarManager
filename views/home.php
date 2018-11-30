@@ -12,7 +12,7 @@
 
     <div class="col-12 col-md-10 col-xl-8">
       <p class="title">Ajouter un véhicule</p>
-      <form method="post">
+      <form method="post" action="./?&add">
 
         <div class="form-group">
           <label for="vehicle-type">Type de véhicule</label>
@@ -109,7 +109,7 @@
                   Modifier
                 </button>
 
-                <form method="post" class="d-inline">
+                <form method="post" action="./?&del" class="d-inline">
                   <input type="hidden" name="id" value="<?= $vehicle->getId() ?>">
                   <button name="delete-vehicle" class="btn btn-danger">
                     Supprimer
@@ -136,7 +136,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form method="post">
+            <form method="post" action="./?&put">
               <input type="hidden" name="id" value="<?= $vehicle->getId() ?>">
               <div class="modal-body">
                 <div class="form-group">
