@@ -25,22 +25,22 @@ class Motorbike extends Vehicle
   {
     if(!in_array($this->getWheel(), self::WHEELS)) 
     {
-      throw new Exception('Une moto ne peut avoir que 2, ou 3 roues');
+      throw new Exception('Une moto ne peut avoir '.$this->getWheel().' roue(s)');
     }
 
     if(!in_array($this->getBrand(), self::BRANDS))
     {
-      throw new Exception('Cette marque n\'est pas autorisé');
+      throw new Exception('Cette marque ('.$this->getBrand().') n\'est pas autorisé');    
     }
 
     if(!in_array($this->getColor(), self::COLORS))
     {
-      throw new Exception('Cette couleur n\'existe pas');
+      throw new Exception($this->getColor().' n\'est pas une couleur valide');
     }
 
     if(!in_array($this->getPlace(), self::PLACES))
     {
-      throw new Exception('Une moto ne peut avoir que 2, ou 3 place');
+      throw new Exception('Une moto ne peut avoir '.$this->getPlace().' place(s)');
     }
 
     return true;

@@ -21,22 +21,22 @@ class Car extends Vehicle
   {
     if($this->getWheel() != 4) 
     {
-      throw new Exception('Une voiture ne peut avoir que 4 roues');
+      throw new Exception('Une voiture ne peut avoir '.$this->getWheel().' roue(s)');
     }
 
     if(!in_array($this->getBrand(), self::BRANDS))
     {
-      throw new Exception('Cette marque n\'est pas autorisé');
+      throw new Exception('Cette marque ('.$this->getBrand().') n\'est pas autorisé');    
     }
 
     if(!in_array($this->getColor(), self::COLORS))
     {
-      throw new Exception('Cette couleur n\'existe pas');
+      throw new Exception($this->getColor().' n\'est pas une couleur valide');
     }
 
     if(!in_array($this->getPlace(), self::PLACES))
     {
-      throw new Exception('Cette voiture ne peut avoir que 2, 4 ou 5 place');
+      throw new Exception('Une voiture ne peut avoir '.$this->getPlace().' place(s)');
     }
 
     return true;
