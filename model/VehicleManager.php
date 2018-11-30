@@ -39,7 +39,7 @@ class VehicleManager extends Manager
    */
   public function deleteVehicle(Vehicle $vehicle)
   {
-    $req = $this->database->query('DELETE FROM vehicles WHERE id = "' . $vehicle->getId());
+    $req = $this->database->query('DELETE FROM vehicles WHERE id = ' . $vehicle->getId());
   }
   
   /**
