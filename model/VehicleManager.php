@@ -72,4 +72,12 @@ class VehicleManager extends Manager
 
     return $vehicles;
   }
+
+  public function vehicleExist(int $id)
+  {
+    $req = $this->database->prepare('SELECT COUNT(id) as count FROM vehicles WHERE id = :id');
+    $req->bindValue(':id', $id, PDO::PARAM_INT);
+    $req->execute();
+    return ($req->fetch()['count'] > 0);
+  }
 }
