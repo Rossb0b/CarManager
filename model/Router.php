@@ -74,7 +74,11 @@ class Router
   {
     if(!empty($this->vars))
       extract($this->vars);
-    require_once './controllers/' . $this->routes[$this->routes[$this->currentRoute]] . '.php';
+      
+    if($this->currentRoute === 'default')
+      require_once './controllers/' . $this->routes[$this->routes[$this->currentRoute]] . '.php';
+    else 
+      require_once './controllers/' . $this->routes[$this->currentRoute] . '.php';
   }
 
   /**
