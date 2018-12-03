@@ -7,5 +7,6 @@
 */
 return array(
   'default' => 'home',
-  'home' => 'index'
+  'home' => 'index',
+  'vehicle' => 'vehicle_detail'
 );
