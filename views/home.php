@@ -1,11 +1,3 @@
-<div class="jumbotron jumbotron-fluid mb-0">
-
-  <div class="container">
-    <h1>AppCar application</h1>
-  </div>
-
-</div>
-
 <div class="container pb-3">
 
   <div class="row mt-2">
@@ -78,7 +70,7 @@
 
   <div class="row mt-2">
 
-    <div class="col-12 col-md-10 col-xl-8">
+    <div class="col-12 col-lx-10">
       <p class="title">Liste des véhicules</p>
       <table class="table table-dark">
 
@@ -105,6 +97,8 @@
               <td><?= $vehicle->getPlace(); ?></td>
               <td><?= $vehicle->getWheel(); ?></td>
               <td>
+                <a href="./?page=vehicle&id=<?= $vehicle->getId() ?>" class="btn btn-info">Détails</a>
+                
                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit<?= $vehicle->getId(); ?>">
                   Modifier
                 </button>
